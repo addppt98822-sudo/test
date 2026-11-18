@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART INC | Études, Conseils & Référencement Local</title>
+    <meta name="description" content="Accroître votre notoriété est notre priorité ! Accompagnement SEO, SMO, gestion de fiche Google Business et e-réputation.">
+    
+    <!-- Polices Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1b1b1b;
+            --accent-color: #f5a623; /* Jaune/Or inspiré du logo */
+            --whatsapp-color: #25D366;
+            --text-dark: #212121;
+            --text-light: #555555;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-cta {
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(27, 27, 27, 0.75), rgba(27, 27, 27, 0.75)), 
+                        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 14px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0961b;
+        }
+
+        /* --- SECTIONS COMMUNES --- */
+        section {
+            padding: 70px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        /* --- SPÉCIALITÉS (Remplace le schéma complexe par une grille lisible sur mobile) --- */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .specialty-card {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .specialty-card h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .specialty-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* --- SERVICES DÉTAILLÉS --- */
+        .bg-alt {
+            background-color: var(--bg-light);
+            max-width: 100%;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .service-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
+        }
+
+        .service-box ul {
+            list-style: none;
+        }
+
+        .service-box ul li {
+            margin-bottom: 12px;
+            padding-left: 22px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .service-box ul li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- PREUVE SOCIALE / AVIS CLIENTS --- */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .stars {
+            color: #f5a623;
+            font-style: normal;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .client-name {
+            font-style: normal;
+            font-weight: 700;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* --- CALL TO ACTION FINAL --- */
+        .cta-banner {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin: 40px auto;
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            margin-bottom: 25px;
+            color: #cccccc;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111111;
+            color: #888888;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- EN-TÊTE -->
+    <header>
+        <a href="#" class="logo">SMART <span>INC</span></a>
+        <a href="https://wa.me/VOTRENUMERO" target="_blank" class="nav-cta">💬 Discuter sur WhatsApp</a>
+    </header>
+
+    <!-- BANNIÈRE PRINCIPALE -->
+    <div class="hero">
+        <div class="hero-subtitle">Études • Conseils • Accompagnement</div>
+        <h1>Accroître votre notoriété est notre priorité !</h1>
+        <p>Un accompagnement sur-mesure pour obtenir le meilleur positionnement face à la concurrence sur Google, les réseaux sociaux et les cartes en ligne.</p>
+        <a href="#contact" class="btn-primary">Demander un audit gratuit</a>
+    </div>
+
+    <!-- SPÉCIALITÉS (Optimisé mobile) -->
+    <section id="specialites">
+        <h2 class="section-title">Nos Spécialités</h2>
+        <p class="section-desc">Des leviers digitaux complémentaires pour générer un trafic qualifié vers votre établissement ou votre boutique en ligne.</p>
+        
+        <div class="specialties-grid">
+            <div class="specialty-card">
+                <h3>🔍 Référencement Naturel (SEO)</h3>
+                <p>Optimisation de votre présence pour apparaître en tête des recherches Google durables.</p>
+            </div>
+            <div class="specialty-card">
+                <h3>📱 Réseaux Sociaux (SMO)</h3>
+                <p>Gestion et animation stratégique de vos pages sociales pour engager votre communauté.</p>
+            </div>
+            <div class="specialty-card">
+                <h3>🎯 Publicité Digitale (SEA)</h3>
+                <p>Campagnes Google Ads et bannières ciblées pour des résultats immédiats.</p>
+            </div>
+            <div class="specialty-card">
+                <h3>✉️ Emailing & Affiliation</h3>
+                <p>Fidélisation client via newsletters et développement de partenariats externes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESTATIONS DÉTAILLÉES -->
+    <div class="bg-alt">
+        <section id="services">
+            <h2 class="section-title">Notre Accompagnement Clé en Main</h2>
+            <p class="section-desc">Une prise en charge complète de votre image numérique et de votre référencement local.</p>
+
+            <div class="services-container">
+                <div class="service-box">
+                    <h3>1. Audit & Optimisation</h3>
+                    <ul>
+                        <li>Vérification et correction des informations (nom, adresse, téléphone, horaires).</li>
+                        <li>Rédaction de descriptions professionnelles avec mots-clés stratégiques.</li>
+                        <li>Ajout des services, attributs, accès et modes de paiement.</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <h3>2. Visuels & Médias</h3>
+                    <ul>
+                        <li>Valorisation de votre établissement (façade, locaux, équipe).</li>
+                        <li>Mise en avant de vos réalisations et prestations phares.</li>
+                        <li>Contrôle de la qualité et du format des photos et vidéos.</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <h3>3. Gestion des Avis Clients</h3>
+                    <ul>
+                        <li>Création de supports simples (QR Code, lien direct) pour récolter des avis.</li>
+                        <li>Mise en place de réponses professionnelles aux avis positifs comme négatifs.</li>
+                        <li>Suivi régulier et personnalisé de votre e-réputation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PREUVE SOCIALE -->
+    <section id="avis">
+        <h2 class="section-title">Ils nous font confiance</h2>
+        <p class="section-desc">Découvrez l'impact de notre accompagnement sur la visibilité de nos clients.</p>
+        
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Grâce à l'optimisation de notre fiche Google et au système de QR Code, nous avons doublé nos avis clients en 2 mois."</p>
+                <div class="client-name">— Client Commerce Local</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Un accompagnement clair et efficace. Notre établissement ressort désormais dans le top 3 sur notre secteur."</p>
+                <div class="client-name">— Gérant d'entreprise</div>
+            </div>
+        </div>
+
+        <!-- APPEL À L'ACTION FINAL -->
+        <div class="cta-banner" id="contact">
+            <h2>Prêt à booster votre visibilité en ligne ?</h2>
+            <p>Contactez-nous dès aujourd'hui pour analyser ensemble le potentiel de votre entreprise.</p>
+            <a href="https://wa.me/VOTRENUMERO" target="_blank" class="btn-primary">Nous contacter maintenant</a>
+        </div>
+    </section>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <p>&copy; 2026 SMART INC - Études, Conseils & Accompagnement Digital. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
